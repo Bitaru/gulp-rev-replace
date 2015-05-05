@@ -79,7 +79,7 @@ function plugin(options) {
         var contents = file.contents.toString();
 
         renames.forEach(function replaceOnce(rename) {
-          contents = contents.split(rename.unreved).join(rename.reved);
+          contents = contents.split("/" + rename.unreved).join(rename.reved);
           if (options.prefix) {
             contents = contents.split('/' + options.prefix).join(options.prefix + '/');
           }
